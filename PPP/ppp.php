@@ -8,20 +8,17 @@ function cek(){
   $tanggal = date('Ymd');
   $cek = mysql_query("SELECT * FROM ppp WHERE tanggal = '$tanggal'") or die (mysql_error());
   $cekin = mysql_fetch_array($cek);
-  if ($cekin['six'] == null) {
-    echo "<li><a href='B02-INPUT-06.php'>INPUT 06.00</a></li>";
-  }elseif ($cekin['twelve'] == null and $cekin['six'] <> null) {
-   echo "<li><a href='B02-INPUT-06.php'>INPUT 06.00</a></li>
-   <li><a href='B02-INPUT-12.php'>INPUT 12.00</a></li>";
+  if ($cekin['twelve'] == null) {
+    echo "<li><a href='PPP-INPUT-12.php'>INPUT 12.00</a></li>";
   }elseif ($cekin['eightteen'] == null and $cekin['six'] <> null) {
-    echo "<li><a href='B02-INPUT-06.php'>INPUT 06.00</a></li>
-   <li><a href='B02-INPUT-12.php'>INPUT 12.00</a></li>
-   <li><a href='B02-INPUT-18.php'>INPUT 18.00</a></li>";
+    echo "
+   <li><a href='PPP-INPUT-12.php'>INPUT 12.00</a></li>
+   <li><a href='PPP-INPUT-18.php'>INPUT 18.00</a></li>";
   }else{
-    echo "<li><a href='B02-INPUT-06.php'>INPUT 06.00</a></li>
-   <li><a href='B02-INPUT-12.php'>INPUT 12.00</a></li>
-   <li><a href='B02-INPUT-18.php'>INPUT 18.00</a></li>
-   <li><a href='B02-INPUT-24.php'>INPUT 24.00</a></li>";
+    echo "
+   <li><a href='PPP-INPUT-12.php'>INPUT 12.00</a></li>
+   <li><a href='PPP-INPUT-18.php'>INPUT 18.00</a></li>
+   <li><a href='PPP-INPUT-24.php'>INPUT 24.00</a></li>";
   }
 }
  ?>
