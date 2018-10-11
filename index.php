@@ -38,9 +38,15 @@ define("INDEX",true);
     </ul>
   </div>
 </nav>
-    <div id="landing-home">
-        <h1> Selamat Datang</h1>
+  <div class="hero-image" style="
+  background-image:url('assets/img/pep5.jpg');
+  ">
+    <div class="hero-text">
+    <h1>Pertamina EP Asset 5</h1>
+    <h1>Monitoring Stock Production Sangasanga</h1>
+  </div>
     </div>
+    
     <footer>
         <h2 class="text-nowrap text-uppercase text-center">PT PERTAMINA EP 5. <?php echo date('Y') ?></h2>
         <!--  Alvian "NOGOTSKIL" Wahyudhi -->
