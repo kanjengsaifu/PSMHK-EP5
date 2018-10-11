@@ -43,7 +43,7 @@ define("INDEX",true);
   ">
     <div class="hero-text">
     <h1>Pertamina EP Asset 5</h1>
-    <h1>Monitoring Stock Production Sangasanga</h1>
+    <h1>INVENTORY 7055</h1>
   </div>
     </div>
     
