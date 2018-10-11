@@ -79,6 +79,9 @@
           ['Year', 'Estimated', 'Real'],
           //pake perulangan
           <?php while ($datas = mysql_fetch_array($coba)) {
+            if ($datas['nyata'] == null) {
+              $datas['nyata'] =0;
+            }
               echo "['".$datas["waktu"]."', ".$datas["expected"].", ".$datas["nyata"]."],";
           } ?>
         ]);
