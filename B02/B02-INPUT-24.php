@@ -16,7 +16,7 @@ $data = mysql_fetch_array($tampil);
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
     <link rel="stylesheet" href="../assets/css/styles.css">
-    <link rel="stylesheet" href="../assets/css/Pretty-Header.css">
+    
 </head>
 <body>
   <nav class="navbar navbar-default">
