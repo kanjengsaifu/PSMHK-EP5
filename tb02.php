@@ -706,7 +706,7 @@
     </div>
     <hr>
     <footer>
-        <h2 class="text-nowrap text-uppercase text-center">PT PERTAMINA EP 5. <?php echo date('Y') ?></h2>
+        <h2 class="text-nowrap text-uppercase text-center">PT PERTAMINA EP ASSET 5. <?php echo date('Y') ?></h2>
         <!--  Alvian "NOGOTSKIL" Wahyudhi -->
     </footer>
     <script src="assets/js/jquery.min.js"></script>
