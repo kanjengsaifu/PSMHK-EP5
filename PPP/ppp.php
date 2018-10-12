@@ -46,5 +46,13 @@ function cek(){
     </ul>
   </div>
 </nav>
+<div class="hero-image" style="
+  background-image:url('../assets/img/pep5.jpg');
+  ">
+    <div class="hero-text">
+    <h1>Pertamina EP Asset 5</h1>
+    <h1>Penerimaan PPP</h1>
+  </div>
+    </div>
 </body>
 </html>

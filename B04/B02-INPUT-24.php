@@ -42,7 +42,9 @@ $data = mysql_fetch_array($tampil);
     <label for="b0224">Input Produksi</label>
     <input type="number" class="form-control" id="b0224" name="b0224" step="0.0001" required>
   </div>
-  <button type="submit" class="btn btn-default" onclick="<?php echo "script" ?>">Submit</button>
+  <button type="submit" class="btn btn-default" onclick="
+  var hasil = document.getElementById('b0224').value;
+  return confirm('Stock B-04 @24.00 : '+hasil);">Submit</button>
 </form>  
  </div>
  <hr> 

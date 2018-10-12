@@ -43,7 +43,9 @@ $data = mysql_fetch_array($tampil);
     <label for="b026">Input Produksi</label>
     <input type="number" class="form-control" id="b026" name="b026" step="0.0001" required>
   </div>
-  <button type="submit" class="btn btn-default">Submit</button>
+  <button type="submit" class="btn btn-default" onclick="
+  var hasil = document.getElementById('b026').value;
+  return confirm('Penerimaan PPP @12.00 : '+hasil);">Submit</button>
 </form>    
   </div>
   <hr>
