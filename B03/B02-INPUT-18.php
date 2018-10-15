@@ -3,7 +3,7 @@ $tanggal = date('Ymd');
 $sekarang = date('d-m-Y');
 
 $con = mysqli_connect("localhost", "root", "", "smhk");
-$tampil = mysqli_query("SELECT * FROM spub WHERE tanggal = '$tanggal' and nama_tangki = 'B-03'") or die (mysqli_error());
+$tampil = mysqli_query($con,"SELECT * FROM spub WHERE tanggal = '$tanggal' and nama_tangki = 'B-03'") or die (mysqli_error());
 $data = mysqli_fetch_array($tampil, MYSQLI_BOTH);
 
  ?>

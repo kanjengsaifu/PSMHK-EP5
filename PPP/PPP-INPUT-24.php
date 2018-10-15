@@ -2,7 +2,7 @@
 $tanggal = date('Ymd');
 $sekarang = date('d-m-Y');
 
-mysqli_connect("localhost", "root", "", "smhk");
+$con = mysqli_connect("localhost", "root", "", "smhk");
 $tampil = mysqli_query($con, "SELECT * FROM ppp WHERE tanggal = $tanggal") or die (mysqli_error());
 $data = mysqli_fetch_array($tampil, MYSQLI_BOTH);
 
