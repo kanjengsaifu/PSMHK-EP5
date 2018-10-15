@@ -1,15 +1,13 @@
 <?php
 include '../storage.php';
 
-mysql_connect("localhost", "root", "") or
-    die("Could not connect: " . mysql_error());
-mysql_select_db("smhk");
+$con = mysqli_connect("localhost", "root", "", "smhk");
 
 
 $tanggal = date('Ymd');
 
-$cek = mysql_query("SELECT * FROM ppp WHERE tanggal = $tanggal") or die (mysql_error());
-$cekin = mysql_fetch_array($cek);
+$cek = mysqli_query($con, "SELECT * FROM ppp WHERE tanggal = $tanggal") or die (mysqli_error());
+$cekin = mysqli_fetch_array($cek, MYSQLI_BOTH);
 
 if (isset($_POST)) {
     

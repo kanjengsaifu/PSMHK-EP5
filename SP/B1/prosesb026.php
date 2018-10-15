@@ -1,16 +1,14 @@
 <?php
 include "../../storage.php";
-mysql_connect("localhost", "root", "") or
-    die("Could not connect: " . mysql_error());
-mysql_select_db("smhk");
+$con = mysqli_connect("localhost", "root", "", "smhk");
 
 $tanggal = date('Ymd');
 
-$tampil = mysql_query("SELECT * FROM spub WHERE tanggal = $tanggal-1 and nama_tangki = 'B-1'") or die (mysql_error());
-$data = mysql_fetch_array($tampil);
+$tampil = mysqli_query($con, "SELECT * FROM spub WHERE tanggal = $tanggal-1 and nama_tangki = 'B-1'") or die (mysqli_error());
+$data = mysqli_fetch_array($tampil, MYSQLI_BOTH);
 
-$cek = mysql_query("SELECT * FROM spub WHERE tanggal = $tanggal and nama_tangki = 'B-1'") or die (mysql_error());
-$cekin = mysql_fetch_array($cek);
+$cek = mysqli_query($con, "SELECT * FROM spub WHERE tanggal = $tanggal and nama_tangki = 'B-1'") or die (mysqli_error());
+$cekin = mysqli_fetch_array($cek, MYSQLI_BOTH);
 
 if (isset($_POST)) {
 

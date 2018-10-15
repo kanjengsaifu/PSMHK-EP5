@@ -2,11 +2,9 @@
 $tanggal = date('Ymd');
 $sekarang = date('d-m-Y');
 
-mysql_connect("localhost", "root", "") or
-    die("Could not connect: " . mysql_error());
-mysql_select_db("smhk");
-$tampil = mysql_query("SELECT * FROM ppp WHERE tanggal = $tanggal") or die (mysql_error());
-$data = mysql_fetch_array($tampil);
+$con = mysqli_connect("localhost", "root", "", "smhk");
+$tampil = mysqli_query($con, "SELECT * FROM ppp WHERE tanggal = $tanggal") or die (mysqli_error());
+$data = mysqli_fetch_array($tampil, MYSQLI_BOTH);
 
  ?>
 

@@ -1,11 +1,9 @@
   <?php 
   include 'storage.php';
-  mysql_connect("localhost", "root", "") or
-    die("Could not connect: " . mysql_error());
-  mysql_select_db("smhk");
+$con = mysqli_connect("localhost", "root", "", "smhk");
 
   //
-    $coba = mysql_query("SELECT spub.tanggal as waktu, (sum(spub.twentyfour-spub.zero))+ppp.twentyfour as expected, ppp.twentyfour as nyata FROM spub, ppp WHERE ppp.tanggal=spub.tanggal group by spub.tanggal") or die (mysql_error());
+    $coba = mysqli_query($con, "SELECT spub.tanggal as waktu, (sum(spub.twentyfour-spub.zero))+ppp.twentyfour as expected, ppp.twentyfour as nyata FROM spub, ppp WHERE ppp.tanggal=spub.tanggal group by spub.tanggal") or die (mysqli_error());
    ?>
 
      <html>
@@ -25,7 +23,7 @@
         var data = google.visualization.arrayToDataTable([
           ['Year', 'Estimated', 'Real'],
           //pake perulangan
-          <?php while ($datas = mysql_fetch_array($coba)) {
+          <?php while ($datas = mysqli_fetch_array($coba, MYSQLI_BOTH)) {
             if ($datas['nyata'] == null) {
               $datas['nyata'] =0;
             }

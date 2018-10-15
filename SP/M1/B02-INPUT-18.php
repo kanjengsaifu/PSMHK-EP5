@@ -2,11 +2,9 @@
 $tanggal = date('Ymd');
 $sekarang = date('d-m-Y');
 
-mysql_connect("localhost", "root", "") or
-    die("Could not connect: " . mysql_error());
-mysql_select_db("smhk");
-$tampil = mysql_query("SELECT * FROM spub WHERE tanggal = $tanggal and nama_tangki = 'M-1'") or die (mysql_error());
-$data = mysql_fetch_array($tampil);
+$con = mysqli_connect("localhost", "root", "", "smhk");
+$tampil = mysqli_query($con, "SELECT * FROM spub WHERE tanggal = $tanggal and nama_tangki = 'M-1'") or die (mysqli_error());
+$data = mysqli_fetch_array($tampil, MYSQLI_BOTH);
 
  ?>
 <html>

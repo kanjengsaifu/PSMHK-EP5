@@ -1,16 +1,17 @@
   <?php
 include "../storage.php";
-mysql_connect("localhost", "root", "") or
-    die("Could not connect: " . mysql_error());
-mysql_select_db("smhk");
+
+$con = mysqli_connect("localhost", "root", "","smhk");
+mysqli_select_db($con ,"smhk");
 $tanggal = date('Ymd');
 
 
 
 function cek(){
   $tanggal = date('Ymd');
-  $cek = mysql_query("SELECT * FROM spub WHERE tanggal = '$tanggal' and nama_tangki='B-02'") or die (mysql_error());
-  $cekin = mysql_fetch_array($cek);
+  $con = mysqli_connect("localhost", "root", "","smhk");
+  $cek = mysqli_query($con, "SELECT * FROM spub WHERE tanggal = '$tanggal' and nama_tangki='B-02'") or die (mysqli_error());
+  $cekin = mysqli_fetch_array($cek, MYSQLI_BOTH);
   if ($cekin['six'] == null) {
     echo "<li><a href='B02-INPUT-06.php'>INPUT 06.00</a></li>";
   }elseif ($cekin['twelve'] == null and $cekin['six'] <> null) {
